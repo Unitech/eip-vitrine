@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html x-ng-app="vitrine">
+  <head>
+    <title>Steelsecurity</title>
+
+    <% data.css.forEach(function(css) { %>
+      <link rel="stylesheet" href="<%= css %>">
+    <% }) %>
+
+    <% data.scripts.forEach(function(script) { %>
+      <script src="<%= script %>"></script>
+    <% }) %>
+    <script type='text/javascript' src="http://imsky.github.io/holder/holder.js"></script>
+    <script src="http://cdn.dcms.io/dist/ng-i18n.min.js"></script>
+
+
+  </head>
+  <body class="poc" ng-controller="pocCtrl">
+
+    <center>
+      <h3><b>SteelSecurity.co</b></h3>
+
+      <img src="/image/steelsecurity.png" width="100"/>
+      <img class="ssl" src="/image/ts_logo.gif"/>
+      <br/>
+      <br/>
+    </center>
+
+
+
+    <center>
+      <p class="alert alert-danger" style="margin : 0px 30px">You have refused the access or timeout</p>
+      <br/>
+    </center>
+
+
+  </body>
+</html>

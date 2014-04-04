@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html x-ng-app="vitrine">
+  <head>
+    <title>Steelsecurity</title>
+
+    
+      <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="css/bootstrap.css">
+    
+      <link rel="stylesheet" href="css/landing-page.css">
+    
+      <link rel="stylesheet" href="css/main.css">
+    
+      <link rel="stylesheet" href="css/carousel.css">
+    
+
+    
+      <script src="lib/angular.min.js"></script>
+    
+      <script src="lib/angular-resource.min.js"></script>
+    
+      <script src="lib/angular-mobile.min.js"></script>
+    
+      <script src="lib/moment.min.js"></script>
+    
+      <script src="lib/jquery.js"></script>
+    
+      <script src="lib/modernizr.min.js"></script>
+    
+      <script src="lib/bootstrap.min.js"></script>
+    
+      <script src="js/routes.js"></script>
+    
+      <script src="js/factories/user_factory.js"></script>
+    
+      <script src="js/services/socketio_service.js"></script>
+    
+      <script src="js/filters.js"></script>
+    
+      <script src="js/controllers/main_controller.js"></script>
+    
+    <script type='text/javascript' src="http://imsky.github.io/holder/holder.js"></script>
+    <script src="http://cdn.dcms.io/dist/ng-i18n.min.js"></script>
+    <script>
+      API_URL = "http://hyperloop.io:3000";
+    </script>
+
+  </head>
+  <body class="poc" ng-controller="pocCtrl">
+
+    <center>
+      <h3><b>SteelSecurity.co</b></h3>
+
+      <img src="/image/steelsecurity.png" width="100"/>
+      <img class="ssl" src="/image/ts_logo.gif"/>
+      <br/>
+      <br/>
+    </center>
+
+
+
+    <center>
+      <p class="alert alert-info" style="margin : 0px 30px">Once you receive the notification accept or refuse the access</p>
+      <br/>
+    <div class="progress progress-striped active" style="margin : 0px 30px" >
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="60" style="width: {{(time /60) * 100 }}%;">
+        <span class="sr-only">60% Complete</span>
+      </div>
+    </div>
+
+    <h2 id="timer">{{time}}</h2> seconds remaining
+    </center>
+
+
+  </body>
+</html>

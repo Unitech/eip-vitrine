@@ -1,0 +1,50 @@
+<div class="container">
+  <br/>
+  <div class="col-lg-8 col-lg-offset-2">
+    <div class="panel panel-primary">
+      <div class="panel-heading" t>Register</div>
+      <div class="panel-body">
+        <form ng-submit="register()" class="form-horizontal" role="form" name="logForm">
+          <div class="form-group">
+            <label for="inputEmail1" class="col-lg-3 control-label" t>Email</label>
+            <div class="col-lg-9">
+              <input type="email" ng-model="user.email" class="form-control" id="inputEmail1" placeholder="Email" required="true" name="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail1" class="col-lg-3 control-label" t>Username</label>
+            <div class="col-lg-9">
+              <input type="text" ng-model="user.username" class="form-control" id="inputEmail1" placeholder="Email" required="true" name="email">
+            </div>
+          </div>
+          <div class="form-group" ng-class="{'has-error' : logForm.password.$invalid, 'has-success' : !logForm.password.$invalid}">
+            <label for="inputPassword1" class="col-lg-3 control-label" t>Password</label>
+            <div class="col-lg-9">
+              <input type="password" ng-model="user.password" class="form-control" id="inputPassword1" placeholder="Password" required="true" name="password">
+            </div>
+          </div>
+          <div class="form-group" >
+            <label for="inputPassword1" class="col-lg-3 control-label" t>Password Confirmation</label>
+            <div class="col-lg-9">
+              <input type="password" ng-model="user.password_confirm" class="form-control" id="inputPassword1" placeholder="Password" required="true" name="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-9">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> {{'Remember me' | t}}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-9">
+              <button type="submit" class="btn btn-default">{{'Register' | t}}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,245 @@
+/* line 8, ../../scss/_specific.scss */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+/* line 13, ../../scss/_specific.scss */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+/* line 20, ../../scss/_specific.scss */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* line 26, ../../scss/_specific.scss */
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* line 37, ../../scss/_specific.scss */
+.fade-hide-setup, .fade-show-setup {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+/* line 43, ../../scss/_specific.scss */
+.fade-hide-setup {
+  opacity: 0;
+}
+
+/* line 47, ../../scss/_specific.scss */
+.fade-hide-setup.fade-hide-start {
+  opacity: 1;
+}
+
+/* line 51, ../../scss/_specific.scss */
+.fade-show-setup {
+  opacity: 1;
+}
+
+/* line 55, ../../scss/_specific.scss */
+.fade-show-setup.fade-show-start {
+  opacity: 0;
+}
+
+/* line 62, ../../scss/_specific.scss */
+.mobile {
+  display: none !important;
+}
+@media screen and (max-width: 800px) {
+  /* line 62, ../../scss/_specific.scss */
+  .mobile {
+    display: block !important;
+  }
+}
+
+/* line 69, ../../scss/_specific.scss */
+.desktop {
+  display: block !important;
+}
+@media screen and (max-width: 800px) {
+  /* line 69, ../../scss/_specific.scss */
+  .desktop {
+    display: none !important;
+  }
+}
+
+@-webkit-keyframes bgcolor {
+  /* line 22, ../../scss/main.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 25, ../../scss/main.scss */
+  50% {
+    opacity: 0.5;
+  }
+
+  /* line 28, ../../scss/main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes bgcolor {
+  /* line 22, ../../scss/main.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 25, ../../scss/main.scss */
+  50% {
+    opacity: 0.5;
+  }
+
+  /* line 28, ../../scss/main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes bgcolor {
+  /* line 22, ../../scss/main.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 25, ../../scss/main.scss */
+  50% {
+    opacity: 0.5;
+  }
+
+  /* line 28, ../../scss/main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bgcolor {
+  /* line 22, ../../scss/main.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 25, ../../scss/main.scss */
+  50% {
+    opacity: 0.5;
+  }
+
+  /* line 28, ../../scss/main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+/* line 33, ../../scss/main.scss */
+.rotate {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  animation: bgcolor 3s infinite;
+  -moz-animation: bgcolor 3s infinite;
+  /* Firefox */
+  -webkit-animation: bgcolor 3s infinite;
+  /* Safari and Chrome */
+}
+
+/*
+ * Animation between views
+ */
+/* line 44, ../../scss/main.scss */
+.view-enter, .view-leave {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 48, ../../scss/main.scss */
+.view-enter {
+  opacity: 0;
+}
+
+/* line 51, ../../scss/main.scss */
+.view-enter.view-enter-active {
+  opacity: 1;
+}
+
+/* line 55, ../../scss/main.scss */
+.view-leave {
+  opacity: 1;
+}
+
+/* line 58, ../../scss/main.scss */
+.view-leave.view-leave-active {
+  opacity: 0;
+  display: none;
+}
+
+/*
+ * Angular effect
+ */
+/* line 67, ../../scss/main.scss */
+.fade-hide, .fade-show {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+/* line 70, ../../scss/main.scss */
+.fade-hide {
+  opacity: 1;
+}
+
+/* line 73, ../../scss/main.scss */
+.fade-hide.fade-hide-active {
+  opacity: 0;
+}
+
+/* line 76, ../../scss/main.scss */
+.fade-show {
+  opacity: 0;
+}
+
+/* line 79, ../../scss/main.scss */
+.fade-show.fade-show-active {
+  opacity: 1;
+}
+
+/* line 85, ../../scss/main.scss */
+.page-header {
+  margin-top: 0px;
+}
+/* line 87, ../../scss/main.scss */
+.page-header h1 {
+  margin-top: 0px !important;
+}
+
+/* line 94, ../../scss/main.scss */
+.poc .ssl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

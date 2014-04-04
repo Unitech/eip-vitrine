@@ -1,0 +1,43 @@
+<div class="container">
+
+  <div class="col-lg-3">
+    <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+      <li><a href="#/dashboard">{{'dashboard.menu.title' | t}}</a></li>
+      <li class="active"><a href="#/logs">{{'dashboard.menu.logs' | t}}</a></li>
+      <li><a href="#/settings">{{'dashboard.menu.settings' | t}}</a></li>
+    </ul>
+  </div>
+  <div class="col-lg-9 ">
+
+
+    <div class="page-header">
+      <h1 id="type">{{'logs' | t}}</h1>
+    </div>
+
+    <div style="text-align : center; height : 200px;padding-top : 100px;padding-left : 350px; position : absolute;"
+         ng-show="!loading_finished" ng-animate="{show:'fade-show', hide: 'fade-hide'}">
+      <img src="image/ajax-loader.gif"/>
+      <br/>
+      <t>Loading...</t>
+    </div>
+    
+    <table class="table table-bordered text-center" ng-show="loading_finished"  ng-animate="{show:'fade-show', hide: 'fade-hide'}">
+      <thead >
+        <tr>
+          <th t>Date</th>
+          <th t>Compte</th>
+          <th t>Statut</th>  
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr ng-repeat="log in logs">
+          <td>{{log.date | fromNow}}</td>
+          <td>{{log.type}}</td>
+          <td>{{log.status}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>

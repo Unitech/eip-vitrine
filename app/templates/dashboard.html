@@ -1,0 +1,74 @@
+
+<div class="container">
+
+  <div class="col-lg-3">
+    <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+      <li class="active"><a href="#/dashboard">{{'dashboard.menu.title' | t}}</a></li>
+      <li><a href="#/logs">{{'dashboard.menu.logs' | t}}</a></li>
+      <li><a href="#/settings">{{'dashboard.menu.settings' | t}}</a></li>
+    </ul>
+  </div>
+  <div class="col-lg-9 ">
+
+    <div class="page-header">
+      <h1 id="type">{{'Liste de vos comptes' | t}}</h1>
+    </div>
+
+   
+    <div style="text-align : center; height : 200px;padding-top : 100px;padding-left : 350px; position : absolute;"
+         ng-show="!loading_finished" ng-animate="{show:'fade-show', hide: 'fade-hide'}">
+      <img src="image/ajax-loader.gif"/>
+      <br/>
+      <t>Loading...</t>
+    </div>
+    
+    <table class="table table-bordered text-center" ng-show="loading_finished"  ng-animate="{show:'fade-show', hide: 'fade-hide'}">      
+      <thead>
+        <tr>
+          <th t>Compte</th>
+          <th t>Identifiant</th>
+          <th t>Type de notification</th>
+          <th t>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><select>
+              <option>GMail</option>
+              <option>Facebook</option>
+              <option>Paypal</option>
+            </select></td>
+          <td>robert@gmail.com</td>
+          <td><select>
+              <option>Simple Touch</option>
+              <option>Par Code</option>
+              <option>Off</option>
+            </select></td>
+          <td><button class="btn btn-danger"> Supprimer </button></td>
+        </tr>
+        <tr>
+          <td><select>
+              <option>GMail</option>
+              <option>Facebook</option>
+              <option>Paypal</option>
+            </select></td>
+          <td>roberto@gmail.com</td>
+          <td><select>
+              <option>Simple Touch</option>
+              <option>Par Code</option>
+              <option>Off</option>
+            </select></td>
+          <td><button class="btn btn-danger"> Supprimer</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-info" ng-show="sent"><t>Succesfully sent</t></div>
+    <button class="btn btn-success" ng-click="sendQuery()">Envoyer query sur ping.php</button>
+
+    
+    <!-- <button class="btn btn-success">+ Ajouter un compte</button> -->
+    
+
+  </div>
+</div>

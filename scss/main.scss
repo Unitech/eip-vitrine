@@ -1,0 +1,99 @@
+
+@import "compass";
+@import "compass/css3";
+@import "_specific";
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@include keyframes(bgcolor) {
+    0% {
+        opacity : 0;
+    }
+    50% {
+        opacity : 0.5;
+    }
+    100% {
+        opacity : 1;
+    }
+}
+
+.rotate {
+    @include rotate(90deg);
+    animation:bgcolor 3s infinite;
+    -moz-animation:bgcolor 3s infinite; /* Firefox */
+    -webkit-animation:bgcolor 3s infinite; /* Safari and Chrome */    
+}
+
+
+/*
+ * Animation between views
+ */
+.view-enter, .view-leave {
+    @include transition(0.5s);
+}
+
+.view-enter {
+    opacity : 0;
+}
+.view-enter.view-enter-active {
+    opacity : 1;
+}
+
+.view-leave {
+    opacity : 1;
+}
+.view-leave.view-leave-active {
+    opacity : 0;
+    display : none;
+}
+
+
+/*
+ * Angular effect
+ */
+.fade-hide, .fade-show {
+    @include transition(1s);
+}
+.fade-hide {
+    opacity : 1; 
+}
+.fade-hide.fade-hide-active {
+    opacity : 0; 
+}
+.fade-show {
+    opacity : 0; 
+}
+.fade-show.fade-show-active {
+    opacity : 1; 
+}
+
+
+
+.page-header {
+    margin-top : 0px;
+    h1 {
+        margin-top : 0px !important;
+    }
+}
+
+
+.poc {
+    .ssl {
+        position : absolute;
+        bottom : 0;
+        left : 0;
+    }
+}
