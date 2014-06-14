@@ -17,4 +17,4 @@ if (args.indexOf('deploy') == -1)
 
 args.splice(0, args.indexOf('deploy') + 1);
 
-deployForEnv('app.json', 'production', args);
+deployForEnv('app.json', args[1], args);
