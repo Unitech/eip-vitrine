@@ -23,7 +23,9 @@
   "scripts": {
     "test": "mocha"
   },
-  "dependencies": {},
+  "dependencies": {
+    "underscore" : "*"
+  },
   "devDependencies": {
     "grunt-contrib-watch": "*",
     "grunt-contrib-compass": "*",

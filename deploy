@@ -14,6 +14,9 @@ TEST=1
 REF=
 ENV=
 
+#
+# Read PIPED JSON
+#
 read conf
 
 #
@@ -36,13 +39,11 @@ usage() {
   Commands:
 
     setup                run remote setup commands
-    update               update deploy to the latest release
     revert [n]           revert to [n]th last deployment or 1
     config [key]         output config file or [key]
     curr[ent]            output current release commit
     prev[ious]           output previous release commit
     exec|run <cmd>       execute the given <cmd>
-    console              open an ssh session to the host
     list                 list previous deploy commits
     [ref]                deploy to [ref], the 'ref' setting, or latest tag
 
@@ -111,17 +112,6 @@ run() {
   local shell="`ssh_command`"
   echo $shell "\"$@\"" >> $LOG
   $shell $@
-}
-
-#
-# Launch an interactive ssh console session.
-#
-
-console() {
-  local path="`config_get path`/current"
-  local shell="`ssh_command`"
-  echo $shell
-  exec $shell -t "cd $path; \$SHELL --login"
 }
 
 #
@@ -289,7 +279,6 @@ check_for_local_changes() {
   [ -z "`git rev-list @{upstream}.. -n 1`" ]       || abort "push your changes before deploying"
 }
 
-
 # parse argv
 while test $# -ne 0; do
   arg=$1; shift
@@ -306,17 +295,10 @@ while test $# -ne 0; do
     setup)  setup $@; exit ;;
     list)  list_deploys; exit ;;
     config) config $@; exit ;;
-    *)
-      if test -z "$ENV"; then
-        ENV=$arg;
-      else
-        REF="$REF $arg";
-      fi
-      ;;
   esac
 done
 
-check_for_local_changes
+#check_for_local_changes
 
 # deploy
 deploy "${REF:-`config_get ref`}"
